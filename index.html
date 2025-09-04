@@ -56,6 +56,9 @@
             border-radius: 8px;
         }
     </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#28a745">
+
 </head>
 <body>
     <h1>Cotizador de Bolsas</h1>
@@ -98,5 +101,13 @@
             `;
         }
     </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+  .then(() => console.log('Service Worker registrado'))
+  .catch(err => console.log('Error Service Worker', err));
+}
+</script>
+
 </body>
 </html>
